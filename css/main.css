@@ -1,0 +1,105 @@
+
+a{
+    cursor: pointer;
+}
+h1{
+    font-size:500%;
+}
+.title-underline{
+    width:130px;
+    height:10px;
+    margin:0 auto;
+}
+.title-underlines{
+    width:35vh;
+    height:10px;
+    margin:0 auto;
+    margin-top:2vh;
+}
+#help{
+    text-align: center;
+}
+.contact{
+    font-size: 5vh;
+}
+.phone{
+    font-size:7vh ;
+}
+
+.color{
+    color:greenyellow;
+    
+}
+    #head {
+        font-family: 'Poppins', sans-serif;
+        background: #4834d4;
+        background: -webkit-linear-gradient(to right, #4834d4, #341f97);
+        background: -webkit-linear-gradient(left, #4834d4, #341f97);
+        background: linear-gradient(to right, #4834d4, #341f97);
+    }
+   
+    #decorate{
+        color:lightslategrey;
+    }
+
+    #footer{
+        font-family: 'Poppins', sans-serif;
+        text-shadow:white;
+        text-rendering: geometricPrecision;
+        color:lightcyan;
+        background: #4834d4;
+        background: -webkit-linear-gradient(to right, #4834d4, #341f97);
+        background: -webkit-linear-gradient(left, #4834d4, #341f97);
+        background: linear-gradient(to right, #4834d4, #341f97);
+        height:65vh;
+    }
+
+    #trans{
+        background: transparent;
+        padding: 5px;
+        border-color:wheat;
+    } 
+    #trans:hover{
+        background:lightgray;
+        border-color:lightgray;  
+    }
+    .trans{
+        color:white;
+        background:darkblue;
+    }
+    .trans:hover{
+        color:white;
+        background:darkgreen;
+    }
+    .core{
+        min-width: 37vh;
+    }
+    .height{
+        height:70px;
+        padding-bottom: 150px;
+    }
+
+    
+      
+.pro{
+    height: 100vh;
+}
+#submit{
+    cursor: pointer;
+}
+#submit:hover{
+    background: #4834d4;
+    color:white;
+}
+.design{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+#carousel{
+    background-image: linear-gradient(to right bottom, #b123d8, #008eff, #00c3ff, #00e6db, #0afd74);
+}
+#contact{
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}

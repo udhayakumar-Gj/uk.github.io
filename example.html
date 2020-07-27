@@ -1,0 +1,441 @@
+<label  class="row m-1 mr-lg-4"><h5>Gender:</h5></label>
+                        <select name="gender">
+                        <option type="checkbox" value="Male" ><span > Male</span></option>
+                        <option type="checkbox" value="Female"><span >Female</span></option>
+                        <option type="checkbox" value="other" ><span >transgender</span></option>
+                         </select>
+
+
+                         <div class="form-grop mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone-square-alt"></i></span>
+                                <input type="number" class="form-control"id="tel"name="tel"required/>
+                            </div>
+                        </div>
+
+
+                        $name = $_POST['name'];
+                        $visitor_email=$_POST['email'];
+                        $message=$_POST['message'];
+                        
+                        $email_from = "udhayakumar1152000@gmail.com";
+                        
+                        $email_subject = "New Form Submission";
+                        
+                        $email_body = "User Name : $name.\n".
+                                        "User Email: $visitor_email.\n".
+                                         "User Message: $message.\n";
+                        
+                        
+                        $to = "udhayakumarpdy11@gmail.com";
+                        
+                        $headers = "From: $email_from \r\n";
+                        
+                        $headers .= "Reply-To: $visitor_email  \r\n";
+                        
+                        mail($to,$email_subject,$email_body,$headers);
+                        
+
+
+.success{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)) ,url(../img/img_6.jpg)center/cover no-repeat fixed;
+    opacity: 0.9;
+   }
+
+   #image{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)) ,url(../img/img_6.jpg)center/cover no-repeat fixed;
+    opacity: 0.9;
+}  
+
+
+$gender=($_POST["gender"]);
+
+$pass1=($_POST["pass1"]);
+$pass2=($_POST["pass2"]);
+if ($pass1==$pass2) {
+}else {
+    $_SESSION['message']="password not match";
+}
+
+echo "<a href=\"index.html\">Go Back</a>";
+
+mysqli_query($conn,"INSERT INTO `user`(id, `first_name`, `last_name`, `email`, `company_name`, `type_company`, `ph_numbe`, `gender`, `pass1`) 
+    VALUES ([2],[$first_name],[$last_name],[$email],[$company_name],[$type_company],[$ph_number],[$gender],[$pass1])");
+
+
+mysqli_query($conn,"INSERT INTO user( first_name, last_name, email, company_name, type_company, ph_number)
+VALUES(`$first_name`, `$last_name`, `$email`, `$company_name`, `$type_company`, `$ph_number`)"); 
+<?php
+if (isset($_POST["submit"])) {
+    session_start();
+    $first_name =( $_POST["first_name"]);
+    $last_name=($_POST["last_name"]);
+    $email=($_POST["email"]);
+    $company_name=($_POST["company_name"]);
+    $type_company=($_POST["type_company"]);
+    $ph_number=($_POST["ph_number"]);
+    $gender=($_POST["gender"]);
+    $pass=($_POST["password1"]);
+    $pass2=($_POST["password2"]);
+
+    if ($pass==$pass2) {
+        mysqli_query($connect,"INSERT INTO user( first_name, last_name, email, company_name, type_company, ph_number, gender, pass)
+        VALUES(`$first_name`, `$last_name`, `$email`, `$company_name`, `$type_company`, `$ph_number`, `$gender`,'$pass')"); 
+        mysqli_query($connect,$sql); 
+        $_SESSION["message"]="you are now log in";
+        $_SESSION["username"]=$first_name;
+        header("location: index.html");
+    }else {
+        $_SESSION['message']="password not match";
+    }
+   
+    
+}
+ 
+    ?>
+   
+
+#trans{
+    background: transparent;
+    padding: 5px;
+    border-color:wheat;
+} 
+#trans:hover{
+    background:lightgray;
+    border-color:lightgray;  
+}
+
+
+if(mysqli_affected_rows($connect) > 0){
+    echo "<p>used added</p>";
+    echo "<a href=\"index.html\">Go Back</a>";
+} else {
+    echo "user not register<br />";
+    echo mysqli_error ($connect);
+}
+
+
+<sectino id="carousol" class="py-5 ">
+    <div class="container pro bg-primary">
+        <div class="row text-center">
+            <div class="col text-center">
+                <h1 class="display-4 text-uppercase text-dark mb-0"><strong>products</strong> </h1>
+                 <div class="title-underline w-50 bg-danger "></div>
+            </div>
+        </div> 
+    </div>
+</section>                
+<!--product-->
+<!--product title-->
+<sectino id="carousol" class="mt-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col text-center">
+                <h1 class="display-4 text-uppercase text-dark mb-0"><strong>products</strong> </h1>
+                 <div class="title-underline w-50 bg-danger "></div>
+            </div>
+        </div>         
+ <!--product title end-->
+ <!--carousel start-->
+ <div class="row">
+     <div class="col">
+        <div id="example" class="carousel slide" data-ride="carousel">
+            <!--indicator-->
+            <ul class="carousel-indicators">
+                <li data-target="#example" data-slide-to="0" class="active"></li>
+                <li data-target="#example" data-slide-to="1" class="active"></li>
+                <li data-target="#example" data-slide-to="2" class="active"></li>
+                <li data-target="#example" data-slide-to="3" class="active"></li>
+                <!--image-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/img_1.jpg" alt="project" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img_2.jpg" alt="project" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img_3.jpg" alt="project" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/img_4.jpg" alt="project" class="d-block w-100">
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+     </div>
+ </div>
+                
+     </div>
+</section>
+<!--product end-->
+
+
+ <a href="#product"  type="button"  class="btn btn-outline-secondary text-success justify-content-start text-uppercase">product</a>
+ <a href="#company"  type="button" 
+                        class="btn btn-outline-secondary text-success justify-content-start text-uppercase">Industry</a></div>
+                        <div class="col-2 pt-2 p-1 m-3 my-3"><a href="#contact"  type="button" 
+                            class="btn btn-outline-secondary text-success justify-content-start text-uppercase">contact</a></div>
+                   
+                           
+                            <header id="header" class="bg-info">
+                                <div class="container-fluid ">
+                                    <div class="row">
+                                        <div class="col text-center font-weight-bolder mx-auto text-dark pl-5 text-uppercase">
+                                            <a href="index.html" class="text-danger"><h1 class=" display-1 ">project</h1></a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="register.html" id="hover" type="button" class="col-lg-2  align-content-lg-end col-5 col-sm-3 col-md-3 btn btn-outline-light bg-danger 
+                                            text-secondary pr-lg-5 justify-content-lg-end justify-content-sm-start text-uppercase text-light">Sign Up</a>
+                                            <a href="login.html" id="hover" type="button" class="col-lg-2 col-5 col-sm-3 col-md-3 btn btn-outline-light bg-danger 
+                                            text-secondary pr-lg-5 justify-content-sm-start justify-content-lg-end align-content-lg-end text-uppercase text-light">login</a>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                                </header> 
+            
+                    
+ <!--Menu-->
+ <div class="container-fluid" id="menu">
+    <div class="row badge-dark">
+        <div class="col-2 pt-2 p-2 pr-5 m-3 my-3"><a href="index.html"  type="button" 
+            class="btn btn-outline-secondary text-success justify-content-start text-uppercase">home</a></div>
+            <div class="col-2 pt-2 p-1 m-3 my-3"><a href="#product"  type="button" 
+                class="btn btn-outline-secondary text-success justify-content-start text-uppercase">product</a></div>  
+                <div class="col-2 pt-2 p-1 m-3 my-3"><a href="#company"  type="button" 
+                    class="btn btn-outline-secondary text-success justify-content-start text-uppercase">company</a></div>
+                    <div class="col-2 pt-2 p-1 m-3 my-3"><a href="#contact"  type="button" 
+                        class="btn btn-outline-secondary text-success justify-content-start text-uppercase">help</a></div>
+    </div>
+</div>
+<!--menu end-->
+
+
+<!--carousol slide-->
+        
+<div class="col mx-auto text-center">
+    <div id="example" class="carousel slide" data-ride="carousel">
+        <!--indicator-->
+        <ul class="carousel-indicators">
+            <li data-target="#example" data-slide-to="0" class="active"></li>
+            <li data-target="#example" data-slide-to="1" class="active"></li>
+            <li data-target="#example" data-slide-to="2" class="active"></li>
+            <li data-target="#example" data-slide-to="3" class="active"></li>
+            <!--image-->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/img_1.jpg" alt="project" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/img_2.jpg" alt="project" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/img_3.jpg" alt="project" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/img_4.jpg" alt="project" class="d-block w-100">
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+
+
+<!--team section-->
+    <!--title-->
+    <section id="team">
+        <div class="container">
+            <div class="row p-0 m-0">
+                <div class="col text-center text-warning text-capitalize font-weight-bolder"><h1>team</h1></div>
+            </div>
+        </div>
+        <div class="title-underline bg-danger "></div>
+        <!--card start-->
+        <!--first member-->
+        <div class="container-fluid">
+            <div class="row">
+        <div class="col-md-6 col-lg-4 my-3">
+            <div class="card">
+                <!--card body-->
+                <div class="card-body">
+                    <img src="img/img_1.JPG" alt="members" class="card-img-top"></img>
+                    <h5 class="card-title text-capitalize">
+                        team members</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                             Assumenda similique illum hic quos exercitationem veritatis? Odio, sit accusantium!
+                              Libero omnis odit illum laborum at natus! Assumenda sequi recusandae reiciendis sit?</p>
+                              <a href="#" class="btn btn-outline-warning text-uppercase">press here</a>
+                        </div>  
+                        <!--card body end-->   
+                        <!--footer--> 
+                              <div class="card-footer bg-secondary d-flex justify-content-around">
+                                <a href="https://www.facebook.com/profile.php?id=100025218219468" target="_blank">
+                                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.youtube.com/channel/UCoZahT7O0kjC0yNTtXoBnvA?view_as=subscriber" target="_blank">
+                                    <i class="fab fa-youtube fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://twitter.com/udhaya_py" target="_blank">
+                                    <i class="fab fa-twitter fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.linkedin.com/in/udhayakumar-g-72a36518a/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x text-dark"></i>
+                                </a>
+                              </div>
+            </div>
+        </div>
+         <!--first member end-->               
+        <!--second member-->
+        <div class="col-md-6 col-lg-4 my-3">
+            <div class="card">
+                <!--card body-->
+                <div class="card-body">
+                    <img src="img/img_2.jpg" alt="members" class="card-img-top"></img>
+                    <h5 class="card-title text-capitalize">
+                        team members</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                             Assumenda similique illum hic quos exercitationem veritatis? Odio, sit accusantium!
+                              Libero omnis odit illum laborum at natus! Assumenda sequi recusandae reiciendis sit?</p>
+                              <a href="#" class="btn btn-outline-warning text-uppercase">press here</a>
+                        </div>  
+                        <!--card body end-->   
+                        <!--footer--> 
+                              <div class="card-footer bg-secondary d-flex justify-content-around">
+                                <a href="https://www.facebook.com/profile.php?id=100025218219468" target="_blank">
+                                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.youtube.com/channel/UCoZahT7O0kjC0yNTtXoBnvA?view_as=subscriber" target="_blank">
+                                    <i class="fab fa-youtube fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://twitter.com/udhaya_py" target="_blank">
+                                    <i class="fab fa-twitter fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.linkedin.com/in/udhayakumar-g-72a36518a/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x text-dark"></i>
+                                </a>
+                              </div>
+            </div>
+        </div>
+        <!--second member end-->
+    
+        <!--third member-->
+        <div class="col-md-6 col-lg-4 my-3">
+            <div class="card">
+                <!--card body-->
+                <div class="card-body">
+                    <img src="img/img_3.jpg" alt="members" class="card-img-top"></img>
+                    <h5 class="card-title text-capitalize">
+                        team members</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                             Assumenda similique illum hic quos exercitationem veritatis? Odio, sit accusantium!
+                              Libero omnis odit illum laborum at natus! Assumenda sequi recusandae reiciendis sit?</p>
+                              <a href="#" class="btn btn-outline-warning text-uppercase">press here</a>
+                        </div>  
+                        <!--card body end-->   
+                        <!--footer--> 
+                              <div class="card-footer bg-secondary d-flex justify-content-around">
+                                <a href="https://www.facebook.com/profile.php?id=100025218219468" target="_blank">
+                                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.youtube.com/channel/UCoZahT7O0kjC0yNTtXoBnvA?view_as=subscriber" target="_blank">
+                                    <i class="fab fa-youtube fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://twitter.com/udhaya_py" target="_blank">
+                                    <i class="fab fa-twitter fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.linkedin.com/in/udhayakumar-g-72a36518a/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x text-dark"></i>
+                                </a>
+                              </div>
+            </div>
+        </div>
+        <!--third member end-->
+    
+        <!--forth member-->
+        <div class="col-md-6 col-lg-4 my-3">
+            <div class="card">
+                <!--card body-->
+                <div class="card-body">
+                    <img src="img/img_4.jpg" alt="members" class="card-img-top"></img>
+                    <h5 class="card-title text-capitalize">
+                        team members</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                             Assumenda similique illum hic quos exercitationem veritatis? Odio, sit accusantium!
+                              Libero omnis odit illum laborum at natus! Assumenda sequi recusandae reiciendis sit?</p>
+                              <a href="#" class="btn btn-outline-warning text-uppercase">press here</a>
+                        </div>  
+                        <!--card body end-->   
+                        <!--footer--> 
+                              <div class="card-footer bg-secondary d-flex justify-content-around">
+                                <a href="https://www.facebook.com/profile.php?id=100025218219468" target="_blank">
+                                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.youtube.com/channel/UCoZahT7O0kjC0yNTtXoBnvA?view_as=subscriber" target="_blank">
+                                    <i class="fab fa-youtube fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://twitter.com/udhaya_py" target="_blank">
+                                    <i class="fab fa-twitter fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.linkedin.com/in/udhayakumar-g-72a36518a/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x text-dark"></i>
+                                </a>
+                              </div>
+            </div>
+        </div>
+        <!--forth member end-->
+    
+        <!--fifth member-->
+        <div class="col-md-6 col-lg-4 my-3">
+            <div class="card">
+                <!--card body-->
+                <div class="card-body">
+                    <img src="img/img_5.jpg" alt="members" class="card-img-top"></img>
+                    <h5 class="card-title text-capitalize">
+                        team members</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                             Assumenda similique illum hic quos exercitationem veritatis? Odio, sit accusantium!
+                              Libero omnis odit illum laborum at natus! Assumenda sequi recusandae reiciendis sit?</p>
+                              <a href="#" class="btn btn-outline-warning text-uppercase">press here</a>
+                        </div>  
+                        <!--card body end-->   
+                        <!--footer--> 
+                              <div class="card-footer bg-secondary d-flex justify-content-around">
+                                <a href="https://www.facebook.com/profile.php?id=100025218219468" target="_blank">
+                                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.youtube.com/channel/UCoZahT7O0kjC0yNTtXoBnvA?view_as=subscriber" target="_blank">
+                                    <i class="fab fa-youtube fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://twitter.com/udhaya_py" target="_blank">
+                                    <i class="fab fa-twitter fa-2x text-dark"></i>
+                                </a>
+    
+                                <a href="https://www.linkedin.com/in/udhayakumar-g-72a36518a/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x text-dark"></i>
+                                </a>
+                              </div>
+            </div>
+        </div>
+    </div>
+    </div>    
+        <!--fifth member end-->
+    </section>    
+    <!--team section end-->
